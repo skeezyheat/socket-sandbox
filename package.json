@@ -1,0 +1,14 @@
+{
+  "name": "socket-chat",
+  "version": "1.0.0",
+  "description": "Learning Socket",
+  "main": "index.js",
+  "repository": {},
+  "author": "SkeezyHeat <jesse.slavens@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "socket.io": "^1.7.2"
+  }
+}
