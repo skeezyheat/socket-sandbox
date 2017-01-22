@@ -17,12 +17,24 @@ http.listen(PORT, function(){
 });
 
 io.on('connection', function(socket){
-  console.log('user connected');
-  socket.on('chat message', function(message){
-    console.log(`message: ${message}`)
-    io.emit('chat message', message);
-  })
+
   socket.on('disconnect', function(){
-    console.log('user disconnected')
-  })
+  });
+
+  socket.on('create room', function(room){
+    //if room exists, try again
+    if(io.sockets.adapter.rooms[room]){
+      console.log(`room ${room} already exists`)
+      socket.emit('room exists')
+    }
+    else{
+      socket.join(room);
+      console.log(`room ${room} created and joined`)
+    }
+  });
+
+  socket.on('join room', function(room){
+    socket.join(room);
+    console.log(`room ${room} joined`)
+  });
 });
