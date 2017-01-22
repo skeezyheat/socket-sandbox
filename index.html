@@ -1,23 +1,25 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Socket.IO Playground</title>
   </head>
   <body>
-    <h1 id="room-code"></h1>
+      <h1>CREATE ROOM</h1>
+      <h2 id="room-code"></h2>
 
-    <button id="create-room">Create Room</button>
+      Password: <input id="set-password" /> <br />
+      <button id="create-room">Create Room</button>
 
-    <form id="join-room">
-      <input id="input-room-code"  />
-      <button>Join Room</button>
-    </form>
+      <h1>JOIN ROOM</h1>
+      Room Code: <input id="input-room-code"  /><br />
+      Password: <input id="input-room-password"  /><br />
+      <button id="join-room">Join Room</button>
 
 
 
     <!-- <script src="node_modules/socket.io/lib/socket.js"></script> -->
     <script src="http://localhost:8000/socket.io/socket.io.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="createRoom.js"></script>
+    <script src="rooms.js"></script>
   </body>
 </html>
